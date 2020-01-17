@@ -1,0 +1,55 @@
+<div fxLayoutAlign="center" style="margin: 4%">
+
+<mat-card style="width: 60%">
+  <mat-card-title>
+    Inscrire un chien
+  </mat-card-title>
+  <ng-container  matColumnDef="position">
+    <table>
+      <tr>
+
+        <mat-form-field>
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Nom">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Race">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput type="number" min="1" max="60" placeholder="Age">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Couleur">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Description">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-checkbox>Sociable avec les chats</mat-checkbox><br>
+        <mat-checkbox>Sociable avec chats</mat-checkbox><br>
+        <mat-checkbox>Sociable avec bébés</mat-checkbox><br>
+      </tr>
+      <tr>
+        <mat-card style="width: 200px">
+          <mat-form-field>
+            <input matInput type="file">
+          </mat-form-field>
+        </mat-card>
+      </tr>
+      <tr>
+        <button mat-raised-button color="primary">Envoyer</button>
+      </tr>
+    </table>
+  </ng-container>
+
+</mat-card>
+</div>

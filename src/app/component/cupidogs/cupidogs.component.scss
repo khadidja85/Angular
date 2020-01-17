@@ -1,0 +1,15 @@
+div {
+  margin-left: 24%;
+  margin-right: 24%;
+}
+
+.example-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.example-button-row{
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
