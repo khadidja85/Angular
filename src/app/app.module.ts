@@ -27,6 +27,8 @@ import { InscriptionComponent } from './component/inscription/inscription.compon
 import { InscriptionChienComponent } from './component/inscription-chien/inscription-chien.component';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatFileUploadModule} from 'angular-material-fileupload';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,8 +61,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatCardModule,
     MatGridListModule,
     MatRadioModule,
-     FlexLayoutModule,
-     MatIconModule
+    FlexLayoutModule,
+    MatIconModule,
+    MatFileUploadModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

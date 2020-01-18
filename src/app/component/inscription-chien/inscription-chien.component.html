@@ -1,15 +1,13 @@
 <div fxLayoutAlign="center" style="margin: 4%">
 
-<mat-card style="width: 60%">
-  <mat-card-title>
-    Inscrire un chien
-  </mat-card-title>
-  <ng-container  matColumnDef="position">
+  <mat-card style="width: 60%">
+    <mat-card-title>
+      Inscrire un chien
+    </mat-card-title>
+
     <table>
       <tr>
-
         <mat-form-field>
-          <mat-label>Nom</mat-label>
           <input matInput placeholder="Nom">
         </mat-form-field>
       </tr>
@@ -25,7 +23,12 @@
       </tr>
       <tr>
         <mat-form-field>
-          <input matInput type="text" placeholder="Couleur">
+          <input matInput type="number" min="1" placeholder="Poid">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput placeholder="Passions">
         </mat-form-field>
       </tr>
       <tr>
@@ -34,22 +37,31 @@
         </mat-form-field>
       </tr>
       <tr>
+        <p>Gender</p>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Male</mat-radio-button><br>
+          <mat-radio-button value="2">Femelle</mat-radio-button><br>
+        </mat-radio-group>
+      </tr>
+      <tr>
+        <br>
+      </tr>
+      <tr>
         <mat-checkbox>Sociable avec les chats</mat-checkbox><br>
-        <mat-checkbox>Sociable avec chats</mat-checkbox><br>
+        <mat-checkbox>Sociable avec chiens</mat-checkbox><br>
         <mat-checkbox>Sociable avec bébés</mat-checkbox><br>
       </tr>
       <tr>
-        <mat-card style="width: 200px">
-          <mat-form-field>
-            <input matInput type="file">
-          </mat-form-field>
-        </mat-card>
+        <div class="div-img">
+          <td>
+            Télécharger une photo
+          </td>
+          <input type="file" (change)="onFileSelected($event)">
+        </div>
       </tr>
       <tr>
         <button mat-raised-button color="primary">Envoyer</button>
       </tr>
     </table>
-  </ng-container>
-
-</mat-card>
+  </mat-card>
 </div>
