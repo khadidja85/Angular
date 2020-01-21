@@ -1,41 +1,43 @@
 <div fxLayoutAlign="center" style="margin: 4%">
 
-<mat-card class="example-card" style="width: 60%">
+  <mat-card class="example-card" style="width: 60%">
+  <mat-card-title>
+    Inscription
+  </mat-card-title>
 
-<mat-card-title>
-  Inscription
-</mat-card-title>
 
-<table>
-  <tr>
-  <tr>
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Homme</mat-radio-button><br>
-      <mat-radio-button value="2">Femme</mat-radio-button>
-    </mat-radio-group>
-  </tr>
-  <tr>
+    <table>
+      <tr>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Homme</mat-radio-button><br>
+          <mat-radio-button value="2">Femme</mat-radio-button>
+        </mat-radio-group>
+      </tr>
+      <tr>
+        <mat-form-field style="margin-top: 18px">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field style="margin-bottom: 12px">
+          <input matInput type="email" placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+          <mat-hint>Les erreurs apparaissent instantanément!</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Veuillez saisir une adresse e-mail valide
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email est <strong>obligatoir</strong>
+          </mat-error>
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-checkbox>S'inscrire à la newsletter</mat-checkbox><br>
+      </tr>
+      <tr>
+        <button type="submit" mat-raised-button color="primary" style="margin-top: 24px">Envoyer</button>
+      </tr>
+    </table>
 
-  </tr>
-
-  <tr>
-    <mat-form-field>
-      <mat-label>Nom</mat-label>
-      <input matInput placeholder="">
-    </mat-form-field>
-  </tr>
-  <tr>
-    <mat-form-field>
-      <input matInput type="email" placeholder="Email">
-    </mat-form-field>
-  </tr>
-  <tr>
-    <mat-checkbox>S'inscrire à la newsletter</mat-checkbox><br>
-  </tr>
-  <tr>
-    <button mat-raised-button color="primary">Envoyer</button>
-  </tr>
-</table>
-
-</mat-card>
+  </mat-card>
 </div>
