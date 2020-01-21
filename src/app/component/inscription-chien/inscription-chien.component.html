@@ -5,63 +5,70 @@
       Inscrire un chien
     </mat-card-title>
 
-    <table>
-      <tr>
-        <mat-form-field>
-          <input matInput placeholder="Nom">
-        </mat-form-field>
-      </tr>
-      <tr>
-        <mat-form-field>
-          <input matInput type="text" placeholder="Race">
-        </mat-form-field>
-      </tr>
-      <tr>
-        <mat-form-field>
-          <input matInput type="number" min="1" max="60" placeholder="Age">
-        </mat-form-field>
-      </tr>
-      <tr>
-        <mat-form-field>
-          <input matInput type="number" min="1" placeholder="Poid">
-        </mat-form-field>
-      </tr>
-      <tr>
-        <mat-form-field>
-          <input matInput placeholder="Passions">
-        </mat-form-field>
-      </tr>
-      <tr>
-        <mat-form-field>
-          <input matInput type="text" placeholder="Description">
-        </mat-form-field>
-      </tr>
-      <tr>
-        <p>Gender</p>
-        <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="1">Male</mat-radio-button><br>
-          <mat-radio-button value="2">Femelle</mat-radio-button><br>
-        </mat-radio-group>
-      </tr>
-      <tr>
-        <br>
-      </tr>
-      <tr>
-        <mat-checkbox>Sociable avec les chats</mat-checkbox><br>
-        <mat-checkbox>Sociable avec chiens</mat-checkbox><br>
-        <mat-checkbox>Sociable avec bébés</mat-checkbox><br>
-      </tr>
-      <tr>
-        <div class="div-img">
-          <td>
-            Télécharger une photo
-          </td>
-          <input type="file" (change)="onFileSelected($event)">
-        </div>
-      </tr>
-      <tr>
-        <button mat-raised-button color="primary">Envoyer</button>
-      </tr>
-    </table>
+    <form #myForm="ngForm" (ngSubmit)="inscrireChien(); myForm.reset();">
+      <table>
+        <tr>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Nom" name="name"  [(ngModel)]="chien.name">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <input matInput type="text" name="breed" placeholder="Race" [(ngModel)]="chien.breed">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <input matInput type="number" name="age" min="1" max="60" placeholder="Age" [(ngModel)]="chien.age">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <input matInput type="number" name="weight" min="1" placeholder="Poids" [(ngModel)]="chien.weight">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <input matInput type="text" name="hobbies"  placeholder="Passions" [(ngModel)]="chien.hobbies">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <input matInput type="text" name="description" placeholder="Description" [(ngModel)]="chien.description" >
+          </mat-form-field>
+        </tr>
+        <tr>
+          <p>Gender</p>
+          <mat-radio-group aria-label="Select an option" name="gender" [(ngModel)]="chien.gender">
+            <mat-radio-button value="1">Male</mat-radio-button><br>
+            <mat-radio-button value="2">Femelle</mat-radio-button><br>
+          </mat-radio-group>
+        </tr>
+        <tr>
+          <br>
+        </tr>
+        <tr>
+          <mat-checkbox name="likingCats" [(ngModel)]="chien.likingCats"> Sociable avec les chats</mat-checkbox><br>
+          <mat-checkbox name="likingDogs" [(ngModel)]="chien.likingDogs">Sociable avec chiens</mat-checkbox><br>
+          <mat-checkbox name="likingChildren" [(ngModel)]="chien.likingChildren">Sociable avec enfants</mat-checkbox><br>
+        </tr>
+        <tr>
+          <div class="div-img">
+            <td>
+              Choisir une photo
+
+              <input type="file" name="profilePhoto" [(ngModel)]="chien.profilePhoto" (change)="onFileSelected($event)">
+            </td>
+            <td>
+              <button>Charger la photo</button>
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <button type="submit" name="envoyer" mat-raised-button color="primary" [disabled]="myForm.invalid">Envoyer</button>
+        </tr>
+      </table>
+    </form>
   </mat-card>
 </div>
+

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Chien} from '../../classes/chien';
+import {InscriptionChienService} from '../../services/inscription-chien.service';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,12 +29,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class InscriptionChienComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+
+  chien: Chien = new Chien(null, null, null, null, null,
+    null, null, null, null, null,
+    null, null, null );
+
+  constructor(private inscriptionChienService: InscriptionChienService) { }
 
   ngOnInit() {
   }
 
   onFileSelected(event: Event) {
     console.log(event);
+  }
+
+  envoyerChien(myForm: FormControl) {
+
+  }
+
+  inscrireChien() {
+    this.inscriptionChienService.creerChien(this.chien);
+    // this.chien = new Chien(null, null, null, null, null, null, null,
+    //  null, null, null, null, null, null);
   }
 }

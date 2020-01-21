@@ -45,7 +45,6 @@ export class InscriptionComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-
   matcher = new MyErrorStateMatcher();
   /** email controle **/
 

@@ -28,7 +28,8 @@ import { InscriptionChienComponent } from './component/inscription-chien/inscrip
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatFileUploadModule} from 'angular-material-fileupload';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     FlexLayoutModule,
     MatIconModule,
     MatFileUploadModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
