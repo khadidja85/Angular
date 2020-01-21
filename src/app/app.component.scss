@@ -1,3 +1,23 @@
+mat-toolbar-row{
+  overflow : hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 5;
+
+}
+
+.mat-toolbar.mat-primary {
+  background: none;
+  /* color: #fff; */
+  z-index: -1;
+}
+
+.cupiButton {
+  margin-left: 10px;
+}
+
 mat-card-title{
   margin-left: 24%;
   margin-right: 24%;
