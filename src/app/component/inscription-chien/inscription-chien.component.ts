@@ -33,6 +33,7 @@ export class InscriptionChienComponent implements OnInit {
   chien: Chien = new Chien(null, null, null, null, null,
     null, null, null, null, null,
     null, null, null );
+  id: number;
 
   constructor(private inscriptionChienService: InscriptionChienService) { }
 
@@ -42,7 +43,7 @@ export class InscriptionChienComponent implements OnInit {
   onFileSelected(event: Event) {
     console.log(event);
   }
-
+  //jean-marc
   envoyerChien(myForm: FormControl) {
 
   }
@@ -52,4 +53,6 @@ export class InscriptionChienComponent implements OnInit {
     // this.chien = new Chien(null, null, null, null, null, null, null,
     //  null, null, null, null, null, null);
   }
+
+
 }

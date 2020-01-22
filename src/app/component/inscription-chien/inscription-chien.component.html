@@ -38,7 +38,7 @@
           </mat-form-field>
         </tr>
         <tr>
-          <p>Gender</p>
+          <p>Genre</p>
           <mat-radio-group aria-label="Select an option" name="gender" [(ngModel)]="chien.gender">
             <mat-radio-button value="1">Male</mat-radio-button><br>
             <mat-radio-button value="2">Femelle</mat-radio-button><br>
@@ -56,7 +56,6 @@
           <div class="div-img">
             <td>
               Choisir une photo
-
               <input type="file" name="profilePhoto" [(ngModel)]="chien.profilePhoto" (change)="onFileSelected($event)">
             </td>
             <td>
@@ -71,4 +70,10 @@
     </form>
   </mat-card>
 </div>
+
+<div>
+
+
+
+
 

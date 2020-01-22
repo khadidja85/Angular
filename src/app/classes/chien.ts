@@ -16,6 +16,7 @@ export class Chien {
   likingDogs: boolean;
   likingChildren: boolean;
   dogOwner: Maitre;
+  getId: any;
 
   constructor(name: string, breed: string, age: number, weight: number, gender: string,
               description: string, profilePhoto: [], color: string,

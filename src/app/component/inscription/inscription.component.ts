@@ -20,6 +20,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 /** Email Controle **/
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import {Maitre} from '../../classes/maitre';
+import {InscriptionChienService} from '../../services/inscription-chien.service';
+import {InscriptionMaitreService} from '../../services/inscription-maitre.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -38,7 +41,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class InscriptionComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
 
   /** email controle **/
   emailFormControl = new FormControl('', [
@@ -50,5 +52,12 @@ export class InscriptionComponent implements OnInit {
 
   ngOnInit() {
   }
-
+/* on instancie un maitre */
+  maitre: Maitre = new Maitre(null, null, null,
+    null, null, null, null, null, null, null, null, null);
+  // appleer un servive qui crée le maitre :
+  constructor(private inscriptionMaitreService: InscriptionMaitreService) { }
+  inscrireMaitre() {
+    this.inscriptionMaitreService.insererMaitre(this.maitre);
+  }
 }
