@@ -9,11 +9,11 @@
       <table>
         <tr>
           <mat-radio-group aria-label="Select an option" name="civility" [(ngModel)]="maitre.civility">
-            <mat-radio-button value="1">MADAME</mat-radio-button>
+            <mat-radio-button value="MADAME" checked="checked">MADAME</mat-radio-button>
             <br>
-            <mat-radio-button value="2">MONSIEUR</mat-radio-button>
+            <mat-radio-button value="MONSIEUR">MONSIEUR</mat-radio-button>
             <br>
-            <mat-radio-button value="3">AUTRE</mat-radio-button>
+            <mat-radio-button value="AUTRE">AUTRE</mat-radio-button>
           </mat-radio-group>
         </tr>
         <tr>
@@ -28,12 +28,7 @@
             <input matInput name="lName" placeholder="" [(ngModel)]="maitre.lName">
           </mat-form-field>
         </tr>
-        <tr>
-          <mat-form-field style="margin-top: 18px">
-            <mat-label>Adresse</mat-label>
-            <input matInput name="address" placeholder="" [(ngModel)]="maitre.street">
-          </mat-form-field>
-        </tr>
+
         <tr>
           <mat-form-field style="margin-bottom: 12px">
             <input matInput type="email" placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" [(ngModel)]="maitre.email">
@@ -47,13 +42,68 @@
           </mat-form-field>
         </tr>
         <tr>
-          <mat-form-field>
+          <mat-form-field style="margin-top: 18px">
             <mat-label>Mot de passe</mat-label>
-            <input matInput type="password" name="password" placeholder="" [(ngModel)]="maitre.password">
+            <input matInput name="password" type="password" placeholder="" [(ngModel)]="maitre.password">
           </mat-form-field>
         </tr>
         <tr>
-          <mat-checkbox>S'inscrire à la newsletter</mat-checkbox><br>
+          <mat-form-field style="margin-top: 18px">
+            <mat-label>Occupation</mat-label>
+            <input matInput name="occupation" placeholder="" [(ngModel)]="maitre.occupation">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field style="margin-top: 18px">
+            <mat-label>Description</mat-label>
+            <input matInput name="description" placeholder="" [(ngModel)]="maitre.description">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field style="margin-top: 18px">
+            <mat-label>Description</mat-label>
+            <input matInput name="description" placeholder="" [(ngModel)]="maitre.description">
+          </mat-form-field>
+        </tr>
+        <tr>
+         <mat-label>
+           Adresse
+         </mat-label>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <mat-label>Numero de la rue</mat-label>
+            <input matInput name="streetNumber" placeholder="" type="number" [(ngModel)]="maitre.address.streetNumber">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <mat-label>Rue</mat-label>
+            <input matInput name="street" placeholder="" type="text" [(ngModel)]="maitre.address.street">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <mat-label>Ville</mat-label>
+            <input matInput name="city" placeholder=""  type="text" [(ngModel)]="maitre.address.city">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field>
+            <mat-label>Code postale</mat-label>
+            <input matInput name="zipCode" placeholder="" type="number" [(ngModel)]="maitre.address.zipCode">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-label>
+            Type d'inscription
+          </mat-label>
+          <mat-radio-group aria-label="Select an option" name="subscriptionType" [(ngModel)]="maitre.subscriptionType">
+            <mat-radio-button value="PREMIUM" checked="checked">Premium</mat-radio-button>
+            <br>
+            <mat-radio-button value="FREE">Free</mat-radio-button>
+            <br>
+          </mat-radio-group>
         </tr>
         <tr>
           <button type="submit" mat-raised-button color="primary" style="margin-top: 24px" [disabled]="myForm.invalid">Envoyer</button>

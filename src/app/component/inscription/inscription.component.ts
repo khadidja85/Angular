@@ -23,6 +23,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import {Maitre} from '../../classes/maitre';
 import {InscriptionChienService} from '../../services/inscription-chien.service';
 import {InscriptionMaitreService} from '../../services/inscription-maitre.service';
+import {Adresse} from '../../classes/adresse';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -54,10 +55,12 @@ export class InscriptionComponent implements OnInit {
   }
 /* on instancie un maitre */
   maitre: Maitre = new Maitre(null, null, null,
-    null, null, null, null, null, null, null, null, null);
+    null, null, null, null, null, null, new Adresse(null, null, null, null));
   // appleer un servive qui crée le maitre :
   constructor(private inscriptionMaitreService: InscriptionMaitreService) { }
   inscrireMaitre() {
+    console.log(this.maitre);
+
     this.inscriptionMaitreService.insererMaitre(this.maitre);
   }
 }
